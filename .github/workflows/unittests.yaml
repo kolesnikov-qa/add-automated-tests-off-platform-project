@@ -3,15 +3,14 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    containter: python:3.11-slim
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.12.0
+          python-version: 3.14.5
           architecture: x64
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip3.14 install -r requirements.txt
       - name: Run Tests
-        run: python -m pytest
+        run: python3.14 -m pytest
