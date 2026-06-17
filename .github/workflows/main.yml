@@ -1,13 +1,30 @@
-name: My First Pipeline
+name: Test Execution Pipeline
 
 on: [push]
 
 jobs:
-  hello-job:
+  run-tests:
     runs-on: ubuntu-latest
-    steps:
-      - name: Say Hello
-        run: echo "Привет! Это мой первый шаг в CI/CD!"
 
-      - name: Check Linux Version
-        run: lsb_release -a
+    steps:
+      # Шаг 1: Скачиваем код (теперь сервер видит файлы репозитория)
+      - name: Clone repository code
+        uses: actions/checkout@v4
+
+      # Шаг 2: Ставим Node.js (база для многих современных автотестов)
+      - name: Install Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Шаг 3: Имитируем установку тестового фреймворка
+      - name: Install testing tools
+        run: echo "Здесь робот выполняет команду установки (например, npm install)"
+
+      # Шаг 4: Имитируем запуск тестов
+      - name: Execute automated tests
+        run: |
+          echo "Запускаем тесты командой (например, npm run test)..."
+          echo "Тест 1: Авторизация — Пройден"
+          echo "Тест 2: Покупка товара — Пройден"
+          echo "Все тесты успешно завершены!"
