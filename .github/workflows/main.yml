@@ -1,0 +1,13 @@
+name: My First Pipeline
+
+on: [push]
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Привет! Это мой первый шаг в CI/CD!"
+
+      - name: Check Linux Version
+        run: lsb_release -a
