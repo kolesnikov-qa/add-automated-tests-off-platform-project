@@ -9,11 +9,11 @@ jobs:
     steps:
       # Шаг 1: Скачиваем код (теперь сервер видит файлы репозитория)
       - name: Clone repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       # Шаг 2: Ставим Node.js (база для многих современных автотестов)
       - name: Install Node.js environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '24'
 
