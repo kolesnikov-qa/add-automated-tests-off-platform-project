@@ -15,11 +15,14 @@ jobs:
       - name: Install Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       # Шаг 3: Имитируем установку тестового фреймворка
       - name: Install testing tools
-        run: echo "Здесь робот выполняет команду установки (например, npm install)"
+        run: | 
+          echo "==============================="
+          echo "Здесь робот выполняет команду установки (например, npm install)"
+          echo "==============================="
 
       # Шаг 4: Имитируем запуск тестов
       - name: Execute automated tests
